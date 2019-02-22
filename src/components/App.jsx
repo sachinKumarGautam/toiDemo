@@ -3,13 +3,15 @@ import Main from './main'
 import Header from './header'
 import Footer from './footer'
 import withRoot from '../withRoot.js'
+import ToiDemo from './toiDemo'
 class App extends Component {
   render () {
     return (
       <div>
-        <Header />
+        {/* <Header />
         <Main />
-        <Footer />
+        <Footer /> */}
+        <ToiDemo/>
       </div>
     )
   }
