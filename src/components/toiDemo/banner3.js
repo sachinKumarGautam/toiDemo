@@ -53,6 +53,13 @@ const styles = {
     backgroundRepeat: 'no-repeat',
     position: 'absolute',
     right: '0'
+  },
+  clickHere: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    marginRight: '-50%'
   }
 }
 
@@ -68,11 +75,11 @@ export default class banner2 extends Component {
       <a href={isDataAvailable ? 'https://staging.timesprime.com/payment/?merchantId=TOI&showVp=true&clientSecret=MlF5N0ZKYVRrMjZ4Qko0Uw==': '#'}>
         <div style={styles.bannerWrapper} onClick={this.onClick}>
         {
-           bannerApiState && bannerApiState.toiDesktopHP3 &&
+           bannerApiState && bannerApiState.toiDesktopHP3 ?
            <div style={styles.imageWrapper}>
               <div id='#thumbnail' style={styles.thumbnail}></div>
              <div style={styles.header}>{bannerApiState.toiDesktopHP3.header}</div>
-           </div>
+           </div> : <div style={styles.clickHere}>Click here</div>
         }
         {bannerApiState && bannerApiState.toiDesktopHP3 && <div id='#cta' style={styles.cta}>Pay now</div>}
       </div>
